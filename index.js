@@ -22542,42 +22542,18 @@ if ("production" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.production.min.js":"i17t"}],"NdAl":[function(require,module,exports) {
-'use strict';
-
-var m = require('react-dom');
-if ("production" === 'production') {
-  exports.createRoot = m.createRoot;
-  exports.hydrateRoot = m.hydrateRoot;
-} else {
-  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-  exports.createRoot = function (c, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.createRoot(c, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-  exports.hydrateRoot = function (c, h, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.hydrateRoot(c, h, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-}
-},{"react-dom":"NKHc"}],"deHo":[function(require,module,exports) {
+},{"./cjs/react-dom.production.min.js":"i17t"}],"deHo":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 var _ChatbotBox = _interopRequireDefault(require("./Components/ChatbotBox"));
-var _client = require("react-dom/client");
+var _reactDom = _interopRequireDefault(require("react-dom"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 // import App from "./Components/App";
 
-const root = (0, _client.createRoot)(document.getElementById("root"));
-root.render( /*#__PURE__*/_react.default.createElement(_ChatbotBox.default, null));
-},{"react":"n8MK","./Components/ChatbotBox":"JSR6","react-dom/client":"NdAl"}]},{},["deHo"], null)
+// const root = createRoot(document.getElementById("root"));
+// root.render(<App />);
+
+_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_ChatbotBox.default, null), document.getElementById("root"));
+},{"react":"n8MK","./Components/ChatbotBox":"JSR6","react-dom":"NKHc"}]},{},["deHo"], null)
 //# sourceMappingURL=/index.js.map
